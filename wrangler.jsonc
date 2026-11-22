@@ -1,0 +1,11 @@
+// Cloudflare Workers configuration: static site, no server code.
+// Only the site/ folder is published; everything else in the repo stays private.
+{
+  "name": "alquimiacordoba-com", // must match the Worker name in the Cloudflare dashboard
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page", // serve site/404.html for unknown URLs
+    "html_handling": "auto-trailing-slash" // /servicios serves servicios.html
+  }
+}
