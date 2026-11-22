@@ -1,0 +1,11 @@
+# Cloudflare Pages redirects: old WordPress URLs -> new pages (permanent)
+/servicios/                      /servicios            301
+/articulos/                      /articulos            301
+/formacion/                      /formacion            301
+/angel-chialvo/                  /angel-chialvo        301
+/contacto/                       /contacto             301
+/articulo/cambio-de-paradigma/   /cambio-de-paradigma  301
+/articulo/cambio-de-paradigma    /cambio-de-paradigma  301
+/turnos/                         /contacto             301
+/turnos                          /contacto             301
+/feed/                           /                     301
