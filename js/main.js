@@ -35,13 +35,18 @@
     var active = 0;
     var timer = null;
     var showSlide = function (n) {
+      // The outgoing slide stays visible underneath while the new one fades in on top,
+      // so the crossfade only ever shows these two images.
+      var prev = n === active ? -1 : active;
       active = n;
       var next = (n + 1) % slides.length;
       slides.forEach(function (s, i) {
+        s.classList.remove('is-next');
         s.classList.toggle('is-active', i === n);
-        s.classList.toggle('is-next', i === next);
+        s.classList.toggle('is-prev', i === prev);
         s.setAttribute('aria-hidden', String(i !== n));
-        if (i === n || i === next) {
+        if (i === next) {
+          // Preload the upcoming image so its fade-in is smooth (it stays hidden).
           var img = s.querySelector('img');
           if (img) img.loading = 'eager';
         }

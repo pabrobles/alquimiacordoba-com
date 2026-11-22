@@ -403,8 +403,8 @@ button {
   overflow: hidden;
   visibility: hidden;
 }
-.hero-slide.is-next {
-  visibility: visible;
+.hero-slide.is-prev {
+  visibility: visible; /* outgoing slide, shown under the fading-in one */
 }
 .hero-slide.is-active {
   visibility: visible;
