@@ -872,11 +872,24 @@ button {
   flex-direction: column;
   gap: 20px;
 }
+.serv-thumb {
+  overflow: hidden; /* clips the zoomed image */
+  border-radius: 10px 10px 0 0;
+}
 .serv-card img {
+  display: block;
   width: 100%;
   aspect-ratio: 353 / 234;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  transition: transform 0.4s ease;
+  backface-visibility: hidden;
+}
+/* Hover: image zooms in, title turns theme tan (same as the original site) */
+.serv-card:hover img {
+  transform: scale(1.1);
+}
+.serv-card:hover .serv-body h3 {
+  color: var(--c-tan);
 }
 .serv-body {
   position: relative;
@@ -891,6 +904,13 @@ button {
   font-weight: 600;
   line-height: 1.2;
   color: #000000;
+  transition: color 0.4s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .serv-card img,
+  .serv-body h3 {
+    transition: none;
+  }
 }
 .serv-body p {
   margin-top: 14px;
